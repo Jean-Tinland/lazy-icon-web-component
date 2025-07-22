@@ -27,7 +27,7 @@ Each icon must be a well named file containing a `<svg>` sprite with a `<symbol>
 </svg>
 ```
 
-## Usage
+## Configuration & loading
 
 Copy this `lazy-icon.js` script inside your project.
 
@@ -51,4 +51,12 @@ Create the configuration object then insert bellow a `<script type="module"> any
     <script src="./lazy-icon.js" type="module" async defer></script>
   </body>
 </html>
+```
+
+## Usage
+
+Now that the configuration is in place and the script is loaded, you can use the `lazy-icon` custom element anywhere in your project.
+
+```html
+<lazy-icon code="arrow-left"></lazy-icon>
 ```
