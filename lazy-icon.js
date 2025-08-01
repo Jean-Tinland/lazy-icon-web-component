@@ -41,7 +41,7 @@ class LazyIcon extends HTMLElement {
 
   /** Called when an observed attribute changes. */
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name === "code" && oldValue !== newValue) {
+    if (name === "code" && oldValue && oldValue !== newValue) {
       this.code = newValue;
       this.#unobserve();
       this.#createUse();
