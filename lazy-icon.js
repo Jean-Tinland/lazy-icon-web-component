@@ -25,16 +25,9 @@ class LazyIcon extends HTMLElement {
   #config = Object.freeze(
     Object.assign(
       { spriteUrl: "/public/images/icons" },
-      window.lazyIconConfig || {},
-    ),
+      window.lazyIconConfig || {}
+    )
   );
-
-  constructor() {
-    super();
-    this.code = this.getAttribute("code");
-    this.innerHTML = `<svg viewBox="0 0 24 24"></svg>`;
-    this.svg = this.querySelector("svg");
-  }
 
   /** Observes the code attribute that specifies the icon to load. */
   static observedAttributes = ["code"];
@@ -57,6 +50,7 @@ class LazyIcon extends HTMLElement {
 
   /** Observes the SVG element to load the icon when it is in the viewport. */
   #observe = () => {
+    this.svg = this.querySelector("svg");
     if (!this.svg) return;
     const isCompatible = "IntersectionObserver" in window;
     if (!isCompatible) {
@@ -81,6 +75,9 @@ class LazyIcon extends HTMLElement {
 
   /** Called when the element is added to the DOM. */
   connectedCallback() {
+    this.code = this.getAttribute("code");
+    this.innerHTML = `<svg viewBox="0 0 24 24"></svg>`;
+
     this.#observe();
   }
 
@@ -90,4 +87,8 @@ class LazyIcon extends HTMLElement {
   }
 }
 
-window.customElements.define("lazy-icon", LazyIcon);
+window.LazyIcon = LazyIcon;
+
+if (!window.customElements.get("lazy-icon")) {
+  window.customElements.define("lazy-icon", LazyIcon);
+}
