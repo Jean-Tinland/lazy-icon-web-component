@@ -1,0 +1,21 @@
+{
+  "name": "lazy-icon-web-component",
+  "version": "1.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "Jean Tinland",
+    "url": "https://www.jeantinland.com/"
+  },
+  "repository": {
+    "url": "https://github.com/Jean-Tinland/lazy-icon-web-component"
+  },
+  "type": "module",
+  "scripts": {
+    "lint": "eslint --ext .js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "eslint-plugin-wc": "^3.0.2"
+  }
+}
