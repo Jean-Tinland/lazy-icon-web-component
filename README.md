@@ -4,6 +4,8 @@ A web component lazy loading icons from individual sprites.
 
 It uses the `IntersectionObserver` API to load the icon only when it is in the viewport. If the browser doesn't support this API, icon is loaded immediately.
 
+**Notice: As I am working simultaneously on a lot of projects, things here may seem to move slowly but they are still in progress. I'm always monitoring my notifications and messages, so if you have any questions or want to chat about anything, feel free [to reach out](https://www.jeantinland.com/contact/)!**
+
 ## Setup
 
 You'll need to expose your icons in a distant or local folder.
@@ -45,7 +47,7 @@ Create the configuration object then insert bellow a `<script type="module"> any
     <script>
       window.lazyIconConfig = {
         // spriteUrl can be a relative or absolute url
-        spriteUrl: "/public/images/icons"
+        spriteUrl: "/public/images/icons",
       };
     </script>
     <script src="./lazy-icon.js" type="module" async defer></script>
